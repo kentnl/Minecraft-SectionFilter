@@ -7,7 +7,6 @@ build_requires:
   File::Temp: 0
   Module::Build: 0.4003
   Test::More: 0.98
-  strict: 0
 configure_requires:
   Module::Build: 0.4003
 dynamic_config: 0
@@ -24,7 +23,8 @@ provides:
 requires:
   Sub::Exporter::Progressive: 0
   Term::ANSIColor: 0
-  perl: v5.16.0
+  perl: v5.10.0
+  strict: 0
   utf8: 0
   warnings: 0
 version: 0.1.0

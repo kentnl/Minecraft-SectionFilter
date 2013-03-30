@@ -10,8 +10,7 @@ my %module_build_args = (
     "File::Find" => 0,
     "File::Temp" => 0,
     "Module::Build" => "0.4003",
-    "Test::More" => "0.98",
-    "strict" => 0
+    "Test::More" => "0.98"
   },
   "configure_requires" => {
     "Module::Build" => "0.4003"
@@ -29,7 +28,8 @@ my %module_build_args = (
   "requires" => {
     "Sub::Exporter::Progressive" => 0,
     "Term::ANSIColor" => 0,
-    "perl" => "v5.16.0",
+    "perl" => "v5.10.0",
+    "strict" => 0,
     "utf8" => 0,
     "warnings" => 0
   },
