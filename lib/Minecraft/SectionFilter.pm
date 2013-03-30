@@ -23,7 +23,7 @@ use Sub::Exporter::Progressive -setup => {
 
 
 sub translate_sections {
-  state $section = chr(0xA7);
+  state $section = chr 0xA7;
 
   my ($line) = @_;
   my (@out);
