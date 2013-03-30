@@ -1,0 +1,59 @@
+# NAME
+
+Minecraft::SectionFilter - Strip/Process magical § characters from minecraft
+
+# VERSION
+
+version 0.1.0
+
+# SYNOPSIS
+
+    use Minecraft::SectionFilter;
+    while(<$some_stream_of_text>){
+        if( $ENV{MODE} eq 'STRIP' ) {
+            print(strip_sections($_))
+        }
+        else {
+            print(ansi_encode_sections($_));
+        }
+    }
+
+# FUNCTIONS
+
+## translate\_sections
+
+Parse a string into a series of elements;
+
+    my (@list) = translate_sections($string)
+
+Resulting list will be a list of hashrefs, either:
+
+    { type => text , content => "the string itself" }
+
+or
+    { type => section, section\_code => $char }
+
+## strip\_sections
+
+Strip section codes from a string.
+
+    my $output = strip_sections( $input );
+
+## ansi\_encode\_sections
+
+Translate section codes to Term::ANSIColor color codes.
+
+# SEE ALSO
+
+[Minecraft::RCON](http://search.cpan.org/perldoc?Minecraft::RCON) which has a similar feature, except its not user-acessible/reusable.
+
+# AUTHOR
+
+Kent Fredric <kentfredric@gmail.com>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
