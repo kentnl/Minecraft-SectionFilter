@@ -8,7 +8,7 @@ BEGIN {
   $Minecraft::SectionFilter::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Minecraft::SectionFilter::VERSION = '0.001000';
+  $Minecraft::SectionFilter::VERSION = '0.001001';
 }
 
 # ABSTRACT: Strip/Process magical § characters from minecraft
@@ -109,7 +109,7 @@ Minecraft::SectionFilter - Strip/Process magical § characters from minecraft
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 
@@ -136,6 +136,7 @@ Resulting list will be a list of hashrefs, either:
     { type => text , content => "the string itself" }
 
 or
+
     { type => section, section_code => $char }
 
 =head2 strip_sections
@@ -147,6 +148,8 @@ Strip section codes from a string.
 =head2 ansi_encode_sections
 
 Translate section codes to Term::ANSIColor color codes.
+
+    STDOUT->print( ansi_encode_sections( $minecraft_string ) );
 
 =head1 SEE ALSO
 
