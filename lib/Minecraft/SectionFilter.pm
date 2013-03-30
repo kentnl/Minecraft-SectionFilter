@@ -1,4 +1,5 @@
-use v5.16;
+use v5.10;
+use strict;
 use warnings;
 use utf8;
 
@@ -43,19 +44,19 @@ or
 =cut
 
 sub translate_sections {
-  state $section = chr(0xA7);
+  state $section = chr 0xA7;
 
   my ($line) = @_;
   my (@out);
   while ( length $line > 0 ) {
     if ( $line =~ /^([^$section]+)/ ) {
       push @out, { type => text =>, content => "$1", };
-      substr $line, 0, length "$1", "";
+      substr $line, 0, length "$1", q{};
       next;
     }
     if ( $line =~ /^$section(.)/ ) {
       push @out, { type => section =>, section_code => "$1" };
-      substr $line, 0, 2, "";
+      substr $line, 0, 2, q{};
     }
 
   }
