@@ -4,7 +4,7 @@ Minecraft::SectionFilter - Strip/Process magical § characters from minecraft
 
 # VERSION
 
-version 0.001000
+version 0.001001
 
 # SYNOPSIS
 
@@ -31,7 +31,8 @@ Resulting list will be a list of hashrefs, either:
     { type => text , content => "the string itself" }
 
 or
-    { type => section, section\_code => $char }
+
+    { type => section, section_code => $char }
 
 ## strip\_sections
 
@@ -42,6 +43,8 @@ Strip section codes from a string.
 ## ansi\_encode\_sections
 
 Translate section codes to Term::ANSIColor color codes.
+
+    STDOUT->print( ansi_encode_sections( $minecraft_string ) );
 
 # SEE ALSO
 
