@@ -8,10 +8,24 @@ package Minecraft::SectionFilter;
 
 use Sub::Exporter::Progressive -setup => {
   exports => [qw( translate_sections strip_sections ansi_encode_sections )],
-  groups => {
+  groups  => {
     default => [qw( strip_sections ansi_encode_sections )],
   },
 };
+
+=head1 SYNOPSIS
+
+    use Minecraft::SectionFilter;
+    while(<$some_stream_of_text>){
+        if( $ENV{MODE} eq 'STRIP' ) {
+            print(strip_sections($_))
+        }
+        else {
+            print(ansi_encode_sections($_));
+        }
+    }
+
+=cut
 
 =func translate_sections
 
@@ -50,15 +64,15 @@ sub translate_sections {
 
 =func strip_sections
 
-Strip section codes from a string. 
+Strip section codes from a string.
 
     my $output = strip_sections( $input );
 
 =cut
 
 sub _section_to_stripped {
-    return $_[0]->{content} if $_->{type} eq 'text';
-    return q{};
+  return $_[0]->{content} if $_->{type} eq 'text';
+  return q{};
 }
 
 sub strip_sections {
@@ -114,7 +128,7 @@ sub ansi_encode_sections {
 
 =head1 SEE ALSO
 
-L<Minecraft::RCON|Minecraft::RCON> which has a similar feature, except its not user-acessible/reusable. 
+L<Minecraft::RCON|Minecraft::RCON> which has a similar feature, except its not user-acessible/reusable.
 
 =cut
 
