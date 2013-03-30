@@ -65,6 +65,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/kentfredric/Minecraft-SectionFilter/issues"
+      },
+      "homepage" : "https://github.com/kentfredric/Minecraft-SectionFilter",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/kentfredric/Minecraft-SectionFilter.git",
+         "web" : "https://github.com/kentfredric/Minecraft-SectionFilter"
+      }
+   },
    "version" : "0.001000",
    "x_BuiltWith" : {
       "modules" : {

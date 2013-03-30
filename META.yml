@@ -27,6 +27,10 @@ requires:
   strict: 0
   utf8: 0
   warnings: 0
+resources:
+  bugtracker: https://github.com/kentfredric/Minecraft-SectionFilter/issues
+  homepage: https://github.com/kentfredric/Minecraft-SectionFilter
+  repository: https://github.com/kentfredric/Minecraft-SectionFilter.git
 version: 0.001000
 x_BuiltWith:
   modules:
