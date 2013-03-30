@@ -61,11 +61,11 @@
    "provides" : {
       "Minecraft::SectionFilter" : {
          "file" : "lib/Minecraft/SectionFilter.pm",
-         "version" : "v0.1.0"
+         "version" : "0.001000"
       }
    },
    "release_status" : "stable",
-   "version" : "0.1.0",
+   "version" : "0.001000",
    "x_BuiltWith" : {
       "modules" : {
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.7.1",

@@ -3,7 +3,7 @@ NAME
     minecraft
 
 VERSION
-    version 0.1.0
+    version 0.001000
 
 SYNOPSIS
         use Minecraft::SectionFilter;

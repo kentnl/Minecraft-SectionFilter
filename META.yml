@@ -19,7 +19,7 @@ name: Minecraft-SectionFilter
 provides:
   Minecraft::SectionFilter:
     file: lib/Minecraft/SectionFilter.pm
-    version: v0.1.0
+    version: 0.001000
 requires:
   Sub::Exporter::Progressive: 0
   Term::ANSIColor: 0
@@ -27,7 +27,7 @@ requires:
   strict: 0
   utf8: 0
   warnings: 0
-version: 0.1.0
+version: 0.001000
 x_BuiltWith:
   modules:
     Dist::Zilla::PluginBundle::Author::KENTNL: 1.7.1
