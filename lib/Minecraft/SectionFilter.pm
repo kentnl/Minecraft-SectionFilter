@@ -39,6 +39,7 @@ Resulting list will be a list of hashrefs, either:
     { type => text , content => "the string itself" }
 
 or
+
     { type => section, section_code => $char }
 
 =cut
@@ -120,6 +121,8 @@ sub _section_to_ansi {
 =func ansi_encode_sections
 
 Translate section codes to Term::ANSIColor color codes.
+
+    STDOUT->print( ansi_encode_sections( $minecraft_string ) );
 
 =cut
 
