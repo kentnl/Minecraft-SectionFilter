@@ -3,7 +3,7 @@ NAME
     minecraft
 
 VERSION
-    version 0.001000
+    version 0.001001
 
 SYNOPSIS
         use Minecraft::SectionFilter;
@@ -26,7 +26,9 @@ FUNCTIONS
 
         { type => text , content => "the string itself" }
 
-    or { type => section, section_code => $char }
+    or
+
+        { type => section, section_code => $char }
 
   strip_sections
     Strip section codes from a string.
@@ -35,6 +37,8 @@ FUNCTIONS
 
   ansi_encode_sections
     Translate section codes to Term::ANSIColor color codes.
+
+        STDOUT->print( ansi_encode_sections( $minecraft_string ) );
 
 SEE ALSO
     Minecraft::RCON which has a similar feature, except its not

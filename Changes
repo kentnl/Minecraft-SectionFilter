@@ -1,5 +1,10 @@
 Release history for Minecraft-SectionFilter
 
+0.001001 2013-03-30T18:59:02Z
+ [Documentation]
+ - Minor Layout issues
+ - General synopsis for the function <ansi_encode_sections> was missing.
+
 0.001000 2013-03-30T18:49:56Z
  - First version.
 
