@@ -48,14 +48,14 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
-eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.7.1') };
+eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.7.2') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
 eval { $v .= pmver('File::Find','any version') };
 eval { $v .= pmver('File::Temp','any version') };
-eval { $v .= pmver('Module::Build','0.4003') };
+eval { $v .= pmver('Module::Build','0.4004') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
 eval { $v .= pmver('Sub::Exporter::Progressive','any version') };
-eval { $v .= pmver('Term::ANSIColor','any version') };
+eval { $v .= pmver('Term::ANSIColor','4.00') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
 eval { $v .= pmver('Test::More','0.98') };
 eval { $v .= pmver('Test::Pod','1.41') };
