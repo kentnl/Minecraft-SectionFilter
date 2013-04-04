@@ -8,7 +8,7 @@ BEGIN {
   $Minecraft::SectionFilter::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Minecraft::SectionFilter::VERSION = '0.001001';
+  $Minecraft::SectionFilter::VERSION = '0.001002';
 }
 
 # ABSTRACT: Strip/Process magical § characters from minecraft
@@ -109,7 +109,7 @@ Minecraft::SectionFilter - Strip/Process magical § characters from minecraft
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 SYNOPSIS
 
