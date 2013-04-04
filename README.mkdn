@@ -4,7 +4,7 @@ Minecraft::SectionFilter - Strip/Process magical § characters from minecraft
 
 # VERSION
 
-version 0.001001
+version 0.001002
 
 # SYNOPSIS
 
