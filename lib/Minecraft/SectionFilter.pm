@@ -90,7 +90,7 @@ sub _section_to_ansi {
     \&Term::ANSIColor::color;
   };
   state $tr = _ansi_translation_table();
-  my $code = $_[0]->{section_code};
+  my ($code) = $_[0]->{section_code};
   if ( exists $tr->{$code} ) {
     return $colorize->($code);
   }
