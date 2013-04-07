@@ -61,7 +61,7 @@
    "provides" : {
       "Minecraft::SectionFilter" : {
          "file" : "lib/Minecraft/SectionFilter.pm",
-         "version" : "0.001003"
+         "version" : "0.002000"
       }
    },
    "release_status" : "stable",
@@ -76,7 +76,7 @@
          "web" : "https://github.com/kentfredric/Minecraft-SectionFilter"
       }
    },
-   "version" : "0.001003",
+   "version" : "0.002000",
    "x_BuiltWith" : {
       "modules" : {
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.7.2",
