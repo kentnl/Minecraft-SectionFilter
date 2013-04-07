@@ -1,5 +1,7 @@
 ﻿Release history for Minecraft-SectionFilter
 
+0.001003 2013-04-07T19:16:21Z
+
 0.001002 2013-04-04T00:08:25Z
  [BugFix]
  - Depend on at least Term::ANSIColor 4 to avoid "bright_*" failing.

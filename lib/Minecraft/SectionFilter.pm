@@ -8,7 +8,7 @@ BEGIN {
   $Minecraft::SectionFilter::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Minecraft::SectionFilter::VERSION = '0.001002';
+  $Minecraft::SectionFilter::VERSION = '0.001003';
 }
 
 # ABSTRACT: Strip/Process magical § characters from minecraft
@@ -80,13 +80,26 @@ sub _ansi_translation_table {
   };
 }
 
+sub _warn {  warn sprintf '[%s] %s', __PACKAGE__, join q{ }, @_ }
+sub _warnf { warn sprintf '[%s] ' . shift , __PACKAGE__, @_ }
+
 sub _section_to_ansi {
   return $_[0]->{content} unless $_[0]->{type} eq 'section';
   state $colorize = do {
     require Term::ANSIColor;
     \&Term::ANSIColor::color;
   };
-  return $colorize->( _ansi_translation_table()->{ $_[0]->{section_code} } );
+  state $tr = _ansi_translation_table();
+  my $code = $_[0]->{section_code};
+  if ( exists $tr->{ $code } ) {
+      return $colorize->( $code );
+  };
+  if ( exists $tr->{ lc $code } ) {
+        _warnf( 'uppercase section code "%s" (ord=%s)', $_[0]->{section_code} , ord $_[0]->{section_code} )
+         return $colorize->( lc $code );
+  }
+  _warnf('unknown section code "%s" (ord=%s)', $_[0]->{section_code} , ord $_[0]->{section_code} );
+  return '<unknown section ' . $_[0]->{section_code} . '>';
 }
 
 
@@ -98,7 +111,6 @@ sub ansi_encode_sections {
 1;
 
 __END__
-
 =pod
 
 =encoding utf-8
@@ -109,7 +121,7 @@ Minecraft::SectionFilter - Strip/Process magical § characters from minecraft
 
 =head1 VERSION
 
-version 0.001002
+version 0.001003
 
 =head1 SYNOPSIS
 
@@ -167,3 +179,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+
