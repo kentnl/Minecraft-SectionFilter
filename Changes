@@ -1,6 +1,13 @@
 ﻿Release history for Minecraft-SectionFilter
 
-0.001003 2013-04-07T19:26:42Z
+0.001003 2013-04-07T21:15:28Z
+ [Feature]
+ - Now warns when a un-assigned section code is seen in the ansi filter. 
+ - If the section code is an upper case version of a lower case known one,
+   lower case one is used and a warning is printed to STDERR
+ - If the section code is not know, in either upper case or lower case, a
+   warning is printed to STDERR and a placeholder inserted into the output
+   in the form <unknow section O>
 
 0.001002 2013-04-04T00:08:25Z
  [BugFix]
