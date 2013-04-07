@@ -14,6 +14,8 @@ use Sub::Exporter::Progressive -setup => {
   },
 };
 
+use Carp qw( carp );
+
 =head1 SYNOPSIS
 
     use Minecraft::SectionFilter;
@@ -109,8 +111,8 @@ sub _ansi_translation_table {
   };
 }
 
-sub _warn { warn sprintf '[%s] %s', __PACKAGE__, join q{ }, @_ }
-sub _warnf { my $format = '[%s] ' . shift; warn sprintf $format, __PACKAGE__, @_ }
+sub _warn { return carp( sprintf '[%s] %s', __PACKAGE__, join q{ }, @_ ) }
+sub _warnf { my $format = '[%s] ' . shift; return carp( sprintf $format, __PACKAGE__, @_ ) }
 
 sub _section_to_ansi {
   return $_[0]->{content} unless $_[0]->{type} eq 'section';
