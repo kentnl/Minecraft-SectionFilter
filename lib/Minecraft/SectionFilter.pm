@@ -89,12 +89,12 @@ sub _section_to_ansi {
     require Term::ANSIColor;
     \&Term::ANSIColor::color;
   };
-  state $tr = _ansi_translation_table();
+  state $trt = _ansi_translation_table();
   my ($code) = $_[0]->{section_code};
-  if ( exists $tr->{$code} ) {
+  if ( exists $trt->{$code} ) {
     return $colorize->($code);
   }
-  if ( exists $tr->{ lc $code } ) {
+  if ( exists $trt->{ lc $code } ) {
     _warnf( 'uppercase section code "%s" (ord=%s)', $_[0]->{section_code}, ord $_[0]->{section_code} );
     return $colorize->( lc $code );
   }
