@@ -92,11 +92,11 @@ sub _section_to_ansi {
   state $trt = _ansi_translation_table();
   my ($code) = $_[0]->{section_code};
   if ( exists $trt->{$code} ) {
-    return $colorize->($code);
+    return $colorize->( $trt->{ $code });
   }
   if ( exists $trt->{ lc $code } ) {
     _warnf( 'uppercase section code "%s" (ord=%s)', $_[0]->{section_code}, ord $_[0]->{section_code} );
-    return $colorize->( lc $code );
+    return $colorize->( $trt->{lc $code} );
   }
   _warnf( 'unknown section code "%s" (ord=%s)', $_[0]->{section_code}, ord $_[0]->{section_code} );
   return '<unknown section ' . $_[0]->{section_code} . '>';
