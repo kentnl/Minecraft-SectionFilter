@@ -23,6 +23,7 @@ my %module_build_args = (
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "Carp" => 0,
     "Sub::Exporter::Progressive" => 0,
     "Term::ANSIColor" => "4.00",
     "perl" => "v5.10.0",

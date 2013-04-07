@@ -42,6 +42,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Carp" : "0",
             "Sub::Exporter::Progressive" : "0",
             "Term::ANSIColor" : "4.00",
             "perl" : "v5.10.0",
@@ -79,6 +80,7 @@
    "version" : "0.002000",
    "x_BuiltWith" : {
       "modules" : {
+         "Carp" : "1.28",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.7.2",
          "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "NA(possibly not installed)",
          "File::Find" : "1.23",
