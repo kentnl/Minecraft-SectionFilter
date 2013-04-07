@@ -80,8 +80,8 @@ sub _ansi_translation_table {
   };
 }
 
-sub _warn {  warn sprintf '[%s] %s', __PACKAGE__, join q{ }, @_ }
-sub _warnf { warn sprintf '[%s] ' . shift , __PACKAGE__, @_ }
+sub _warn { warn sprintf '[%s] %s', __PACKAGE__, join q{ }, @_ }
+sub _warnf { my $format = '[%s] ' . shift; warn sprintf $format, __PACKAGE__, @_ }
 
 sub _section_to_ansi {
   return $_[0]->{content} unless $_[0]->{type} eq 'section';
@@ -91,14 +91,14 @@ sub _section_to_ansi {
   };
   state $tr = _ansi_translation_table();
   my $code = $_[0]->{section_code};
-  if ( exists $tr->{ $code } ) {
-      return $colorize->( $code );
-  };
-  if ( exists $tr->{ lc $code } ) {
-        _warnf( 'uppercase section code "%s" (ord=%s)', $_[0]->{section_code} , ord $_[0]->{section_code} )
-         return $colorize->( lc $code );
+  if ( exists $tr->{$code} ) {
+    return $colorize->($code);
   }
-  _warnf('unknown section code "%s" (ord=%s)', $_[0]->{section_code} , ord $_[0]->{section_code} );
+  if ( exists $tr->{ lc $code } ) {
+    _warnf( 'uppercase section code "%s" (ord=%s)', $_[0]->{section_code}, ord $_[0]->{section_code} );
+    return $colorize->( lc $code );
+  }
+  _warnf( 'unknown section code "%s" (ord=%s)', $_[0]->{section_code}, ord $_[0]->{section_code} );
   return '<unknown section ' . $_[0]->{section_code} . '>';
 }
 
