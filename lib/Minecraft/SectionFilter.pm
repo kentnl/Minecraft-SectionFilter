@@ -109,13 +109,26 @@ sub _ansi_translation_table {
   };
 }
 
+sub _warn { warn sprintf '[%s] %s', __PACKAGE__, join q{ }, @_ }
+sub _warnf { my $format = '[%s] ' . shift; warn sprintf $format, __PACKAGE__, @_ }
+
 sub _section_to_ansi {
   return $_[0]->{content} unless $_[0]->{type} eq 'section';
   state $colorize = do {
     require Term::ANSIColor;
     \&Term::ANSIColor::color;
   };
-  return $colorize->( _ansi_translation_table()->{ $_[0]->{section_code} } );
+  state $trt = _ansi_translation_table();
+  my ($code) = $_[0]->{section_code};
+  if ( exists $trt->{$code} ) {
+    return $colorize->( $trt->{$code} );
+  }
+  if ( exists $trt->{ lc $code } ) {
+    _warnf( 'uppercase section code "%s" (ord=%s)', $_[0]->{section_code}, ord $_[0]->{section_code} );
+    return $colorize->( $trt->{ lc $code } );
+  }
+  _warnf( 'unknown section code "%s" (ord=%s)', $_[0]->{section_code}, ord $_[0]->{section_code} );
+  return '<unknown section ' . $_[0]->{section_code} . '>';
 }
 
 =func ansi_encode_sections
