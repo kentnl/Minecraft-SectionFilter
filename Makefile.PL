@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use 5.010000;
+use 5.010;
 
 use ExtUtils::MakeMaker ;
 

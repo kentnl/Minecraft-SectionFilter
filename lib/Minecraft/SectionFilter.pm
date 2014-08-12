@@ -1,4 +1,4 @@
-use v5.10;
+use 5.010;
 use strict;
 use warnings;
 use utf8;
@@ -51,9 +51,10 @@ use Carp qw( carp );
 
 
 sub translate_sections {
+  my ($line) = @_;
+
   state $section = chr 0xA7;
 
-  my ($line) = @_;
   my (@out);
   while ( length $line > 0 ) {
     if ( $line =~ /^([^$section]+)/ ) {
