@@ -8,7 +8,7 @@ matrix:
     - perl: "5.10"
       env:  STERILIZE_ENV=0
     - perl: "5.12"
-      env:  STERILIZE_ENV=0 CONFESS=1 VERBOSE_TESTING=1
+      env:  STERILIZE_ENV=0
     - perl: "5.14"
       env:  STERILIZE_ENV=0
     - perl: "5.16"
@@ -20,7 +20,7 @@ matrix:
     - perl: "5.10"
       env:  STERILIZE_ENV=1
     - perl: "5.12"
-      env:  STERILIZE_ENV=1 CONFESS=1 VERBOSE_TESTING=1
+      env:  STERILIZE_ENV=1
     - perl: "5.20"
       env:  STERILIZE_ENV=1
     - perl: "5.21"
