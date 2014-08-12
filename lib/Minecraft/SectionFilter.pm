@@ -80,12 +80,13 @@ sub translate_sections {
 
 
 sub _section_to_stripped {
-  return $_[0]->{content} if $_->{type} eq 'text';
+  my ($section) = @_ return $section->{content} if $section->{type} eq 'text';
   return q{};
 }
 
 sub strip_sections {
-  return join q{}, map { _section_to_stripped($_) } translate_sections( $_[0] );
+  my ($section_string) = @_;
+  return join q{}, map { _section_to_stripped($_) } translate_sections($section_string);
 }
 
 sub _ansi_translation_table {
@@ -116,26 +117,35 @@ sub _ansi_translation_table {
   };
 }
 
-sub _warn { return carp( sprintf '[%s] %s', __PACKAGE__, join q{ }, @_ ) }
-sub _warnf { my $format = '[%s] ' . shift; return carp( sprintf $format, __PACKAGE__, @_ ) }
+sub _warn {
+  my (@args) = @_;
+  return carp( sprintf '[%s] %s', __PACKAGE__, join q{ }, @args );
+}
+
+sub _warnf {
+  my (@args) = @_;
+  my $format = '[%s] ' . shift;
+  return carp( sprintf $format, __PACKAGE__, @args );
+}
 
 sub _section_to_ansi {
-  return $_[0]->{content} unless $_[0]->{type} eq 'section';
+  my ($section) = @_;
+  return $section->{content} unless $section->{type} eq 'section';
   state $colorize = do {
     require Term::ANSIColor;
     \&Term::ANSIColor::color;
   };
   state $trt = _ansi_translation_table();
-  my ($code) = $_[0]->{section_code};
+  my ($code) = $section->{section_code};
   if ( exists $trt->{$code} ) {
     return $colorize->( $trt->{$code} );
   }
   if ( exists $trt->{ lc $code } ) {
-    _warnf( 'uppercase section code "%s" (ord=%s)', $_[0]->{section_code}, ord $_[0]->{section_code} );
+    _warnf( 'uppercase section code "%s" (ord=%s)', $section->{section_code}, ord $section->{section_code} );
     return $colorize->( $trt->{ lc $code } );
   }
-  _warnf( 'unknown section code "%s" (ord=%s)', $_[0]->{section_code}, ord $_[0]->{section_code} );
-  return '<unknown section ' . $_[0]->{section_code} . '>';
+  _warnf( 'unknown section code "%s" (ord=%s)', $section->{section_code}, ord $section->{section_code} );
+  return '<unknown section ' . $section->{section_code} . '>';
 }
 
 
@@ -147,7 +157,8 @@ sub _section_to_ansi {
 
 
 sub ansi_encode_sections {
-  return join q{}, map { _section_to_ansi($_) } translate_sections( $_[0] );
+  my ($section_string) = @_;
+  return join q{}, map { _section_to_ansi($_) } translate_sections($section_string);
 }
 
 
