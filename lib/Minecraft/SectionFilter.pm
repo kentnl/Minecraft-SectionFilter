@@ -5,7 +5,7 @@ use utf8;
 
 package Minecraft::SectionFilter;
 
-our $VERSION = '0.003000';
+our $VERSION = '0.003001';
 
 # ABSTRACT: Strip/Process magical § characters from minecraft
 
