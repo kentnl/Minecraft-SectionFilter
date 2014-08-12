@@ -1,6 +1,12 @@
 ﻿Release history for Minecraft-SectionFilter
 
-0.002001 2014-08-12T00:56:27Z
+0.002001 2014-08-12T00:59:58Z
+ [Dependencies::Stats]
+ - Dependencies changed since 0.002000, see misc/*.deps* for details
+ - build: ↑1
+ - configure: ↑1
+ - develop: +46 -2 (recommends: -1, suggests: +1 -1)
+ - test: +2 ↑1 -2 (recommends: +1)
 
 0.002000 2013-04-07T21:26:10Z
  [Dependencies::Stats]
