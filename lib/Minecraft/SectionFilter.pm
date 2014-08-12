@@ -4,14 +4,8 @@ use warnings;
 use utf8;
 
 package Minecraft::SectionFilter;
-BEGIN {
-  $Minecraft::SectionFilter::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Minecraft::SectionFilter::VERSION = '0.002000';
-}
-
-# ABSTRACT: Strip/Process magical ง characters from minecraft
+$Minecraft::SectionFilter::VERSION = '0.002001';
+# ABSTRACT: Strip/Process magical ยง characters from minecraft
 
 use Sub::Exporter::Progressive -setup => {
   exports => [qw( translate_sections strip_sections ansi_encode_sections )],
@@ -21,6 +15,34 @@ use Sub::Exporter::Progressive -setup => {
 };
 
 use Carp qw( carp );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -43,6 +65,13 @@ sub translate_sections {
   }
   return @out;
 }
+
+
+
+
+
+
+
 
 
 sub _section_to_stripped {
@@ -105,9 +134,21 @@ sub _section_to_ansi {
 }
 
 
+
+
+
+
+
+
+
 sub ansi_encode_sections {
   return join q{}, map { _section_to_ansi($_) } translate_sections( $_[0] );
 }
+
+
+
+
+
 
 
 1;
@@ -116,15 +157,15 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
-Minecraft::SectionFilter - Strip/Process magical ง characters from minecraft
+Minecraft::SectionFilter - Strip/Process magical รยง characters from minecraft
 
 =head1 VERSION
 
-version 0.002000
+version 0.002001
 
 =head1 SYNOPSIS
 
@@ -176,7 +217,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

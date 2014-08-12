@@ -1,0 +1,20 @@
+This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
+
+0.002001
+
+0.002000 2013-04-07T21:26:10Z
+ [Added / runtime requires]
+ - Carp
+
+0.001002 2013-04-04T00:08:25Z
+ [Changed / build requires]
+ - Module::Build 0.4003 → 0.4004
+
+ [Changed / configure requires]
+ - Module::Build 0.4003 → 0.4004
+
+ [Changed / runtime requires]
+ - Term::ANSIColor 0 → 4.00
+
+0.001001 2013-03-30T18:59:02Z
+

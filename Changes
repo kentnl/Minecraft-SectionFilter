@@ -1,22 +1,18 @@
 ﻿Release history for Minecraft-SectionFilter
 
+0.002001 2014-08-12T00:56:27Z
+
 0.002000 2013-04-07T21:26:10Z
- [Dependencies::Changed / build requires]
- - Module::Build 0.4003 → 0.4004
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4003 → 0.4004
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.0 → v1.7.2
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001002, see misc/*.deps* for details
+ - runtime: +1
 
  [Feature]
  - Now warns when a un-assigned section code is seen in the ansi filter. 
- - If the section code is an upper case version of a lower case known one,
-   lower case one is used and a warning is printed to STDERR
- - If the section code is not know, in either upper case or lower case, a
-   warning is printed to STDERR and a placeholder inserted into the output
-   in the form <unknow section O>
+ - If the section code is an upper case version of a lower case known one, lower case one is used and a warning is
+   printed to STDERR
+ - If the section code is not know, in either upper case or lower case, a warning is printed to STDERR and a
+   placeholder inserted into the output in the form <unknow section O>
 
  [Packaging]
  - uses Module::Build 0.4004 test_requires
@@ -25,17 +21,12 @@
  [BugFix]
  - Depend on at least Term::ANSIColor 4 to avoid "bright_*" failing.
 
- [Dependencies::Changed / build requires]
- - Module::Build 0.4003 → 0.4004
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4003 → 0.4004
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.1 → v1.7.2
-
- [Dependencies::Changed / runtime requires]
- - Term::ANSIColor 0 → 4.00
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001001, see misc/*.deps* for details
+ - build: ↑1
+ - configure: ↑1
+ - develop: (suggests: ↑1)
+ - runtime: ↑1
 
  [Packaging]
  - Utilise Module::Build 0.4004 test_requires
