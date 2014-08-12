@@ -5,7 +5,7 @@ author:
 build_requires:
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
-  Test::More: '0.89'
+  Test::More: '0.9501'
 configure_requires:
   ExtUtils::MakeMaker: '0'
 dynamic_config: '0'
@@ -18,7 +18,7 @@ name: Minecraft-SectionFilter
 provides:
   Minecraft::SectionFilter:
     file: lib/Minecraft/SectionFilter.pm
-    version: '0.003000'
+    version: '0.003001'
 requires:
   Carp: '0'
   Sub::Exporter::Progressive: '0'
@@ -31,7 +31,7 @@ resources:
   bugtracker: https://github.com/kentnl/Minecraft-SectionFilter/issues
   homepage: https://github.com/kentnl/Minecraft-SectionFilter
   repository: https://github.com/kentnl/Minecraft-SectionFilter.git
-version: '0.003000'
+version: '0.003001'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
@@ -425,7 +425,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: '0'
-          tag: 0.003000-source
+          tag: 0.003001-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -479,7 +479,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: '0'
-          tag: '0.003000'
+          tag: '0.003001'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local

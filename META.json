@@ -99,14 +99,14 @@
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
-            "Test::More" : "0.89"
+            "Test::More" : "0.9501"
          }
       }
    },
    "provides" : {
       "Minecraft::SectionFilter" : {
          "file" : "lib/Minecraft/SectionFilter.pm",
-         "version" : "0.003000"
+         "version" : "0.003001"
       }
    },
    "release_status" : "stable",
@@ -121,7 +121,7 @@
          "web" : "https://github.com/kentnl/Minecraft-SectionFilter"
       }
    },
-   "version" : "0.003000",
+   "version" : "0.003001",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.142060",
@@ -615,7 +615,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.003000-source",
+                  "tag" : "0.003001-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -686,7 +686,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "0.003000",
+                  "tag" : "0.003001",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
