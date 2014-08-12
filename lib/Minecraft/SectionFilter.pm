@@ -5,7 +5,7 @@ use utf8;
 
 package Minecraft::SectionFilter;
 
-# ABSTRACT: Strip/Process magical ง characters from minecraft
+# ABSTRACT: Strip/Process magical ยง characters from minecraft
 
 use Sub::Exporter::Progressive -setup => {
   exports => [qw( translate_sections strip_sections ansi_encode_sections )],
