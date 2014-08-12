@@ -9,6 +9,8 @@ our $VERSION = '0.003000';
 
 # ABSTRACT: Strip/Process magical § characters from minecraft
 
+# AUTHORITY
+
 use Sub::Exporter::Progressive -setup => {
   exports => [qw( translate_sections strip_sections ansi_encode_sections )],
   groups  => {
