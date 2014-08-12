@@ -80,7 +80,8 @@ sub translate_sections {
 
 
 sub _section_to_stripped {
-  my ($section) = @_ return $section->{content} if $section->{type} eq 'text';
+  my ($section) = @_;
+  return $section->{content} if $section->{type} eq 'text';
   return q{};
 }
 
