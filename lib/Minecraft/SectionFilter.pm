@@ -57,12 +57,12 @@ sub translate_sections {
 
   my (@out);
   while ( length $line > 0 ) {
-    if ( $line =~ /^([^$section]+)/ ) {
+    if ( $line =~ /\A([^$section]+)/msx ) {
       push @out, { type => text =>, content => "$1", };
       substr $line, 0, length "$1", q{};
       next;
     }
-    if ( $line =~ /^$section(.)/ ) {
+    if ( $line =~ /\A$section(.)/msx ) {
       push @out, { type => section =>, section_code => "$1" };
       substr $line, 0, 2, q{};
     }
