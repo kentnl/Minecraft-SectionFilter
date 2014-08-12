@@ -1,17 +1,15 @@
-use v5.10;
+use 5.010;
 use strict;
 use warnings;
 use utf8;
 
 package Minecraft::SectionFilter;
-BEGIN {
-  $Minecraft::SectionFilter::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Minecraft::SectionFilter::VERSION = '0.002000';
-}
 
-# ABSTRACT: Strip/Process magical ง characters from minecraft
+our $VERSION = '0.003000';
+
+# ABSTRACT: Strip/Process magical ยง characters from minecraft
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Sub::Exporter::Progressive -setup => {
   exports => [qw( translate_sections strip_sections ansi_encode_sections )],
@@ -24,18 +22,33 @@ use Carp qw( carp );
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sub translate_sections {
+  my ($line) = @_;
+
   state $section = chr 0xA7;
 
-  my ($line) = @_;
   my (@out);
   while ( length $line > 0 ) {
-    if ( $line =~ /^([^$section]+)/ ) {
+    if ( $line =~ /\A([^$section]+)/msx ) {
       push @out, { type => text =>, content => "$1", };
       substr $line, 0, length "$1", q{};
       next;
     }
-    if ( $line =~ /^$section(.)/ ) {
+    if ( $line =~ /\A$section(.)/msx ) {
       push @out, { type => section =>, section_code => "$1" };
       substr $line, 0, 2, q{};
     }
@@ -45,13 +58,22 @@ sub translate_sections {
 }
 
 
+
+
+
+
+
+
+
 sub _section_to_stripped {
-  return $_[0]->{content} if $_->{type} eq 'text';
+  my ($section) = @_;
+  return $section->{content} if 'text' eq $section->{type};
   return q{};
 }
 
 sub strip_sections {
-  return join q{}, map { _section_to_stripped($_) } translate_sections( $_[0] );
+  my ($section_string) = @_;
+  return join q{}, map { _section_to_stripped($_) } translate_sections($section_string);
 }
 
 sub _ansi_translation_table {
@@ -82,32 +104,66 @@ sub _ansi_translation_table {
   };
 }
 
-sub _warn { return carp( sprintf '[%s] %s', __PACKAGE__, join q{ }, @_ ) }
-sub _warnf { my $format = '[%s] ' . shift; return carp( sprintf $format, __PACKAGE__, @_ ) }
+sub _warn {
+  my (@args) = @_;
+  return carp( sprintf '[%s] %s', __PACKAGE__, join q{ }, @args );
+}
+
+sub _warnf {
+  my (@args) = @_;
+  my $format = '[%s] ' . shift;
+  return carp( sprintf $format, __PACKAGE__, @args );
+}
 
 sub _section_to_ansi {
-  return $_[0]->{content} unless $_[0]->{type} eq 'section';
+  my ($section) = @_;
+  return $section->{content} unless 'section' eq $section->{type};
   state $colorize = do {
     require Term::ANSIColor;
     \&Term::ANSIColor::color;
   };
   state $trt = _ansi_translation_table();
-  my ($code) = $_[0]->{section_code};
+  my ($code) = $section->{section_code};
   if ( exists $trt->{$code} ) {
     return $colorize->( $trt->{$code} );
   }
   if ( exists $trt->{ lc $code } ) {
-    _warnf( 'uppercase section code "%s" (ord=%s)', $_[0]->{section_code}, ord $_[0]->{section_code} );
+    _warnf( 'uppercase section code "%s" (ord=%s)', $section->{section_code}, ord $section->{section_code} );
     return $colorize->( $trt->{ lc $code } );
   }
-  _warnf( 'unknown section code "%s" (ord=%s)', $_[0]->{section_code}, ord $_[0]->{section_code} );
-  return '<unknown section ' . $_[0]->{section_code} . '>';
+  _warnf( 'unknown section code "%s" (ord=%s)', $section->{section_code}, ord $section->{section_code} );
+  return '<unknown section ' . $section->{section_code} . '>';
 }
+
+
+
+
+
+
+
 
 
 sub ansi_encode_sections {
-  return join q{}, map { _section_to_ansi($_) } translate_sections( $_[0] );
+  my ($section_string) = @_;
+  return join q{}, map { _section_to_ansi($_) } translate_sections($section_string);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 1;
@@ -116,15 +172,15 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
-Minecraft::SectionFilter - Strip/Process magical ง characters from minecraft
+Minecraft::SectionFilter - Strip/Process magical รยง characters from minecraft
 
 =head1 VERSION
 
-version 0.002000
+version 0.003000
 
 =head1 SYNOPSIS
 
@@ -176,7 +232,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
