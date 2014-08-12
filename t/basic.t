@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use utf8;
 
-use Test::More;
+use Test::More 0.9501;
 use Minecraft::SectionFilter;
 use Term::ANSIColor qw( color );
 
