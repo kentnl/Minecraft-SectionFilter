@@ -20,20 +20,6 @@ use Sub::Exporter::Progressive -setup => {
 
 use Carp qw( carp );
 
-=head1 SYNOPSIS
-
-    use Minecraft::SectionFilter;
-    while(<$some_stream_of_text>){
-        if( $ENV{MODE} eq 'STRIP' ) {
-            print(strip_sections($_))
-        }
-        else {
-            print(ansi_encode_sections($_));
-        }
-    }
-
-=cut
-
 =func translate_sections
 
 Parse a string into a series of elements;
@@ -161,6 +147,18 @@ sub ansi_encode_sections {
   my ($section_string) = @_;
   return join q{}, map { _section_to_ansi($_) } translate_sections($section_string);
 }
+
+=head1 SYNOPSIS
+
+    use Minecraft::SectionFilter;
+    while(<$some_stream_of_text>){
+        if( $ENV{MODE} eq 'STRIP' ) {
+            print(strip_sections($_))
+        }
+        else {
+            print(ansi_encode_sections($_));
+        }
+    }
 
 =head1 SEE ALSO
 
