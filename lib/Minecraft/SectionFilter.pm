@@ -81,7 +81,7 @@ sub translate_sections {
 
 sub _section_to_stripped {
   my ($section) = @_;
-  return $section->{content} if $section->{type} eq 'text';
+  return $section->{content} if 'text' eq $section->{type};
   return q{};
 }
 
@@ -131,7 +131,7 @@ sub _warnf {
 
 sub _section_to_ansi {
   my ($section) = @_;
-  return $section->{content} unless $section->{type} eq 'section';
+  return $section->{content} unless 'section' eq $section->{type};
   state $colorize = do {
     require Term::ANSIColor;
     \&Term::ANSIColor::color;
