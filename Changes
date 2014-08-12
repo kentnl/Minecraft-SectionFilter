@@ -1,6 +1,12 @@
 ﻿Release history for Minecraft-SectionFilter
 
 {{$NEXT}}
+ [Bugfix]
+ - require a Test::More without a broken subtest {}
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.003000, see misc/*.deps* for details
+ - test: ↑1
 
 0.003000 2014-08-12T01:28:34Z
  [00 Major]
