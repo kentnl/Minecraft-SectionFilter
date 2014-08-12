@@ -36,20 +36,6 @@ use Carp qw( carp );
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 sub translate_sections {
   my ($line) = @_;
 
@@ -161,6 +147,18 @@ sub ansi_encode_sections {
   my ($section_string) = @_;
   return join q{}, map { _section_to_ansi($_) } translate_sections($section_string);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
