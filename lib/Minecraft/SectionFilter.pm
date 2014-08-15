@@ -148,6 +148,8 @@ sub ansi_encode_sections {
   return join q{}, map { _section_to_ansi($_) } translate_sections($section_string);
 }
 
+1;
+
 =head1 SYNOPSIS
 
     use Minecraft::SectionFilter;
@@ -165,5 +167,3 @@ sub ansi_encode_sections {
 L<Minecraft::RCON|Minecraft::RCON> which has a similar feature, except its not user-acessible/reusable.
 
 =cut
-
-1;
