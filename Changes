@@ -1,6 +1,9 @@
 ﻿Release history for Minecraft-SectionFilter
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 0.003001, see misc/*.deps* for details
+ - develop: ↑1 (suggests: ↑1)
 
 0.003001 2014-08-12T11:34:43Z
  [Bugfix]
@@ -30,7 +33,7 @@
  - moved to kentnl org
  - now legal META.yml
  - Source now UTF-8 instead of Latin1 (lol!)
- - Report Versions test uses Test::ReportVersions
+ - Report Versions test uses Test::ReportPrereqs
  - Compile Test uses Test::Compile::PerFile
 
 0.002000 2013-04-07T21:26:10Z
