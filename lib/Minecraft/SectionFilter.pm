@@ -5,7 +5,7 @@ use utf8;
 
 package Minecraft::SectionFilter;
 
-our $VERSION = '0.003001';
+our $VERSION = '0.003002';
 
 # ABSTRACT: Strip/Process magical § characters from minecraft
 
@@ -148,24 +148,6 @@ sub ansi_encode_sections {
   return join q{}, map { _section_to_ansi($_) } translate_sections($section_string);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 1;
 
 __END__
@@ -180,7 +162,7 @@ Minecraft::SectionFilter - Strip/Process magical Â§ characters from minecraft
 
 =head1 VERSION
 
-version 0.003001
+version 0.003002
 
 =head1 SYNOPSIS
 

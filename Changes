@@ -1,5 +1,18 @@
 ﻿Release history for Minecraft-SectionFilter
 
+0.003002 2014-08-15T23:11:19Z
+ [00 Trivial]
+ - CPANDAY!
+ - no code changes.
+ - reduce whitespace.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.003001, see misc/*.deps* for details
+ - develop: ↑1 (suggests: ↑1)
+
+ [Misc]
+ - Improve source side POD to reduce build side whitespace.
+
 0.003001 2014-08-12T11:34:43Z
  [Bugfix]
  - require a Test::More without a broken subtest {}
@@ -28,7 +41,7 @@
  - moved to kentnl org
  - now legal META.yml
  - Source now UTF-8 instead of Latin1 (lol!)
- - Report Versions test uses Test::ReportVersions
+ - Report Versions test uses Test::ReportPrereqs
  - Compile Test uses Test::Compile::PerFile
 
 0.002000 2013-04-07T21:26:10Z
