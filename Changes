@@ -1,6 +1,6 @@
 Release history for Minecraft-SectionFilter
 
-0.003003 2017-03-10T08:50:12Z 8876272
+0.003003 2017-03-10T08:53:47Z 50ff0ba
  - Bugfix: Avoid test failures with -Ddefault_inc_excludes_dot
 
  [Dependencies::Stats]
