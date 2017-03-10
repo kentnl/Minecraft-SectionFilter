@@ -1,11 +1,10 @@
-use 5.010;
+use 5.010;    # state
 use strict;
 use warnings;
-use utf8;
 
 package Minecraft::SectionFilter;
 
-our $VERSION = '0.003002';
+our $VERSION = '0.003003';
 
 # ABSTRACT: Strip/Process magical § characters from minecraft
 
@@ -158,11 +157,11 @@ __END__
 
 =head1 NAME
 
-Minecraft::SectionFilter - Strip/Process magical Â§ characters from minecraft
+Minecraft::SectionFilter - Strip/Process magical § characters from minecraft
 
 =head1 VERSION
 
-version 0.003002
+version 0.003003
 
 =head1 SYNOPSIS
 
@@ -210,11 +209,11 @@ L<Minecraft::RCON|Minecraft::RCON> which has a similar feature, except its not u
 
 =head1 AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2017 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

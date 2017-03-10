@@ -1,56 +1,28 @@
-NAME
-    Minecraft::SectionFilter - Strip/Process magical Â§ characters from
-    minecraft
+Minecraft::SectionFilter
 
-VERSION
-    version 0.003002
 
-SYNOPSIS
-        use Minecraft::SectionFilter;
-        while(<$some_stream_of_text>){
-            if( $ENV{MODE} eq 'STRIP' ) {
-                print(strip_sections($_))
-            }
-            else {
-                print(ansi_encode_sections($_));
-            }
-        }
 
-FUNCTIONS
-  translate_sections
-    Parse a string into a series of elements;
+INSTALLATION
 
-        my (@list) = translate_sections($string)
+This is a Perl module distribution. It should be installed with whichever
+tool you use to manage your installation of Perl, e.g. any of
 
-    Resulting list will be a list of hashrefs, either:
+  cpanm .
+  cpan  .
+  cpanp -i .
 
-        { type => text , content => "the string itself" }
+Consult http://www.cpan.org/modules/INSTALL.html for further instruction.
+Should you wish to install this module manually, the procedure is
 
-    or
-
-        { type => section, section_code => $char }
-
-  strip_sections
-    Strip section codes from a string.
-
-        my $output = strip_sections( $input );
-
-  ansi_encode_sections
-    Translate section codes to Term::ANSIColor color codes.
-
-        STDOUT->print( ansi_encode_sections( $minecraft_string ) );
-
-SEE ALSO
-    Minecraft::RCON which has a similar feature, except its not
-    user-acessible/reusable.
-
-AUTHOR
-    Kent Fredric <kentfredric@gmail.com>
+  perl Makefile.PL
+  make
+  make test
+  make install
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by Kent Fredric
-    <kentfredric@gmail.com>.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+This software is copyright (c) 2017 by Kent Fredric
+<kentfredric@gmail.com>.
 
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
