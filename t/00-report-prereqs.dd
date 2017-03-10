@@ -86,7 +86,6 @@ do { my $x = {
                                       'Term::ANSIColor' => '4.00',
                                       'perl' => '5.010',
                                       'strict' => '0',
-                                      'utf8' => '0',
                                       'warnings' => '0'
                                     }
                     },
@@ -100,7 +99,8 @@ do { my $x = {
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',
                                    'Test::More' => '0.9501',
-                                   'perl' => '5.010'
+                                   'perl' => '5.010',
+                                   'utf8' => '0'
                                  }
                  }
      };

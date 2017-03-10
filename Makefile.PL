@@ -21,13 +21,13 @@ my %WriteMakefileArgs = (
     "Sub::Exporter::Progressive" => 0,
     "Term::ANSIColor" => "4.00",
     "strict" => 0,
-    "utf8" => 0,
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
-    "Test::More" => "0.9501"
+    "Test::More" => "0.9501",
+    "utf8" => 0
   },
   "VERSION" => "0.003003",
   "test" => {
