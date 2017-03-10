@@ -4,7 +4,7 @@ use warnings;
 
 package Minecraft::SectionFilter;
 
-our $VERSION = '0.003003';
+our $VERSION = '0.003004';
 
 # ABSTRACT: Strip/Process magical § characters from minecraft
 
