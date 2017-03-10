@@ -21,7 +21,7 @@ name: Minecraft-SectionFilter
 provides:
   Minecraft::SectionFilter:
     file: lib/Minecraft/SectionFilter.pm
-    version: '0.003003'
+    version: '0.003004'
 requires:
   Carp: '0'
   Sub::Exporter::Progressive: '0'
@@ -33,4 +33,4 @@ resources:
   bugtracker: https://github.com/kentnl/Minecraft-SectionFilter/issues
   homepage: https://github.com/kentnl/Minecraft-SectionFilter
   repository: https://github.com/kentnl/Minecraft-SectionFilter.git
-version: '0.003003'
+version: '0.003004'
